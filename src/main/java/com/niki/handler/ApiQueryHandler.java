@@ -1,4 +1,4 @@
-package com.niki.utils.helper;
+package com.niki.handler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,14 +8,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 @Slf4j
-public class ApiConnectionHelper {
+@Component
+public class ApiQueryHandler {
 
-  private ApiConnectionHelper() {
-  }
-
-  public static String executeQuery(String uri) {
+  public String executeQuery(String uri) {
     HttpURLConnection conn = null;
     try {
       URL url = new URL(uri);

@@ -1,0 +1,33 @@
+{
+  "items":[
+    {
+      "tags":[
+        "java",
+        "collections",
+        "java-stream"
+      ],
+      "owner":{
+        "reputation":833,
+        "user_id":612418,
+        "user_type":"registered",
+        "accept_rate":41,
+        "profile_image":"https://www.gravatar.com/avatar/01147154dd2da0238920c2a2d7f3e6c3?s=128&d=identicon&r=PG",
+        "display_name":"Kai",
+        "link":"https://stackoverflow.com/users/612418/kai"
+      },
+      "is_answered":true,
+      "view_count":49,
+      "closed_date":1568019885,
+      "accepted_answer_id":57847910,
+      "answer_count":1,
+      "score":-2,
+      "last_activity_date":1568158712,
+      "creation_date":1568002104,
+      "last_edit_date":1568158712,
+      "question_id":57847767,
+      "link":"https://stackoverflow.com/questions/57847767/in-java-does-a-check-of-a-collection-for-emptiness-before-applying-a-stream-fun",
+      "closed_reason":"too broad",
+      "title":"In Java, does a check of a collection for emptiness before applying a streamfunctoin chain on it improve performance?"
+    }
+  ]
+}

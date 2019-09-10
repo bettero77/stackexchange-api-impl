@@ -1,4 +1,4 @@
-package com.niki.utils.helper;
+package com.niki.handler;
 
 import static com.niki.utils.constants.Constants.CREATION_DATE;
 import static com.niki.utils.constants.Constants.DISPLAY_NAME;
@@ -17,17 +17,20 @@ import com.niki.entity.StackExchangeQuestion;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Component;
 
-public class ParseResponseHelper {
+@Component
+@RequiredArgsConstructor
+public class ParseResponseHandler {
 
-  private ParseResponseHelper() {
-  }
+  private final ObjectMapper jsonMapper;
 
   @SneakyThrows
-  public static List<StackExchangeQuestion> parseApiResponse(String responseString) {
+  public List<StackExchangeQuestion> parseResponse(String responseString) {
     List<StackExchangeQuestion> questions = new ArrayList<>();
-    JsonNode response = new ObjectMapper().readTree(responseString);
+    JsonNode response = jsonMapper.readTree(responseString);
     JsonNode stackExchangeQuestions = response.findPath(ITEMS);
 
     stackExchangeQuestions.forEach(question -> {
@@ -50,7 +53,7 @@ public class ParseResponseHelper {
     return questions;
   }
 
-  private static Author parseAuthor(JsonNode author) {
+  private Author parseAuthor(JsonNode author) {
     String profileImage = author.has(PROFILE_IMAGE) ? author.get(PROFILE_IMAGE).asText() : "";
     String name = author.has(DISPLAY_NAME) ? author.get(DISPLAY_NAME).asText() : "";
     String link = author.has(LINK) ? author.get(LINK).asText() : "";
