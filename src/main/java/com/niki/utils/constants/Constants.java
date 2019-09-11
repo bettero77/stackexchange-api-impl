@@ -2,7 +2,7 @@ package com.niki.utils.constants;
 
 public class Constants {
 
-  public static final String STACK_EXCHANGE_API_PATH_SEARCH = "stack-exchange.api.path.search";
+  public static final String TITLE_CONSTRAINT = "[a-zA-Z0-9]+";
 
   public static final String INTITLE = "intitle";
   public static final String SITE = "site";
